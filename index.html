@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initinal-scale=1">
+    <meta name="author" content="Yuhan Zhao">
+    <meta name="discription" content="My Web Page">
+    <meta name="keywords" content="html, css, web, web development, seo">
+    <title>Typing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/style/index.css" media="all">
+    <script src="./assets/script/app.js" defer></script>
+</head>
+
+<body>
+    <div class="center">
+        <p class="information">Practice your typing speed</p>
+        <div>
+            <i class="fa-solid fa-shuttle-space icon"></i>
+            <div class="word-display">
+                <p class="type-word"></p>
+            </div>
+            <p class="time-left">Time left: <span class="time">00s</span> | Hit count: <span class="hit">00</span></p>
+            <input type="text" class="input">
+            <div>
+                <button class="btn">
+                    <svg>
+                        <defs>
+                            <linearGradient id="gradiant">
+                                <stop stop-color="#FF8282" offset="0%"></stop>
+                                <stop stop-color="#E178ED" offset="100%"></stop>
+                            </linearGradient>
+                        </defs>
+                        <rect height="50" width="150" stroke="url(#gradiant)" fill="none"></rect>
+                    </svg>
+                    <span class="play">Play Now</span>
+                </button>
+            </div>
+        </div>
+        <dialog class="leaderboard">
+            <div class="title">Score</div>
+            <p class="list"></p>
+            <button class="go-back-btn">BACK</button>
+        </dialog>
+    </div>
+</body>
+
+</html>

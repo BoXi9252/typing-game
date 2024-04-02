@@ -95,25 +95,44 @@ function getRandomWord(letter) {
         inputWord.appendChild(characterSpan);
     });
 }
+// function displayTime() {
+//     time.innerText = `${seconds.toString().padStart(2, 0)}s`;
+//     seconds--;
+//     if (seconds > 0) {
+//         setTimeout(function () {
+//             displayTime()
+//         }, 1000);
+//     }
+//     if (seconds <= 0 && play.innerText === 'END GAME') {
+//         endGame();
+//     }
+// }
+
 function displayTime() {
-    time.innerText = `${seconds.toString().padStart(2, 0)}s`;
     seconds--;
-    if (seconds > 0) {
-        setTimeout(function () {
-            displayTime()
-        }, 1000);
+    time.innerText = `${seconds.toString().padStart(2, '0')}s`;
+
+    if (seconds <= 0) {
+        if (play.innerText === 'END GAME') {
+            endGame();
+        }
+        return; 
     }
-    if (seconds <= 0 && play.innerText === 'END GAME') {
-        endGame();
-    }
+
+    setTimeout(function () {
+        displayTime();
+    }, 1000);
 }
+
+
+
 function start() {
     list.innerHTML = '';
     btn.disabled = false;
     words.sort(() => (Math.random() > 0.5) ? 1 : -1);
     setTimeout(() => {
         backgroundMusic.play();
-        seconds = 10;
+        seconds = 99;
         score.hits = 0;
         score.percentage = 0;
         getRandomWord(words[i]);
@@ -226,10 +245,10 @@ onEvent('click', leaderBoard, function (e) {
 })
 
 // GO BACK
-const goBackBtn = select('.go-back-btn');
+ const goBackBtn = select('.go-back-btn');
 
-onEvent('click', goBackBtn, function () {
-    leaderBoard.close(); // 关闭对话框
-});
+ onEvent('click', goBackBtn, function () {
+     leaderBoard.close(); // 关闭
+ });
 
 

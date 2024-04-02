@@ -1,4 +1,4 @@
-html {
+ html {
     font-family: Sofia Sans, sans-serif;
 }
 
@@ -234,12 +234,17 @@ dialog::backdrop {
     font-size: 15px;
     font-weight: 500;
     justify-content: space-between;
-}
+} 
 
 
- .go-back-btn {
+  .go-back-btn {
       background-color: #955d26;
      border: 2px solid  #000;
      padding: 10px 30px;
      cursor: pointer;
- }
+ } 
+
+
+
+
+ 

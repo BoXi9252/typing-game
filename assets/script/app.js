@@ -238,17 +238,27 @@ function getThisScore() {
     localStorage.setItem('scores', JSON.stringify(scores));
     leaderBoard.showModal();
 }
-onEvent('click', leaderBoard, function (e) {
-    const rect = this.getBoundingClientRect();
-    if (e.clientY < rect.top || e.clientY > rect.bottom || e.clientX < rect.left || e.clientX > rect.right)
-        leaderBoard.close();
-})
-
-// GO BACK
- const goBackBtn = select('.go-back-btn');
-
- onEvent('click', goBackBtn, function () {
-     leaderBoard.close(); // 关闭
- });
 
 
+const goBackBtn = select('.go-back-btn');
+
+onEvent('click', goBackBtn, function () {
+    leaderBoard.close(); // 关闭对话框
+
+    // 重置游戏状态
+    resetGame();
+});
+
+function resetGame() {
+
+    // 重置分数和时间
+    hits = 0;
+    seconds = 0; 
+    hit.innerText = '00';
+    time.innerText = `${seconds}s`;
+
+    // 清空输入字段
+    input.value = '';
+    input.disabled = true;
+
+}

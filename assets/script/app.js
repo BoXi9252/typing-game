@@ -15,7 +15,7 @@ const words = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building',
     'superman', 'library', 'unboxing', 'bookstore', 'language', 'homework',
     'fantastic', 'economy', 'interview', 'awesome', 'challenge', 'science', 'mystery',
     'famous', 'league', 'memory', 'leather', 'planet', 'software', 'update', 'yellow',
-    'keyboard', 'window']; // 保持原有的单词数组
+    'keyboard', 'window']; 
 const bgMusic = document.getElementById('bgMusic');
 const playButton = document.getElementById('playButton');
 const wordInput = document.getElementById('wordInput');
@@ -32,7 +32,7 @@ playButton.addEventListener('click', function () {
 
 function startCountdownBeforeGame() {
     let countdown = 3;
-    playButton.style.visibility = 'hidden'; // 或者设置为不可点击 playButton.disabled = true;
+    playButton.style.visibility = 'hidden'; 
     countdownTimer.innerText = countdown;
     const countdownInterval = setInterval(() => {
         countdown -= 1;
@@ -49,8 +49,8 @@ function startGame() {
     bgMusic.play();
     gameCount++;
     initGame();
-    playButton.innerText = 'End'; // 改变按钮文案为 "End"
-    playButton.style.visibility = 'visible'; // 或者使按钮再次可点击 playButton.disabled = false;
+    playButton.innerText = 'End'; //  "End"
+    playButton.style.visibility = 'visible'; 
     timer = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timer);
@@ -63,7 +63,7 @@ function startGame() {
 }
 
 function endGame() {
-    clearInterval(timer); // 清除计时器
+    clearInterval(timer); // 清除计时器clear timer
     bgMusic.pause();
     bgMusic.currentTime = 0;
     wordInput.disabled = true;
@@ -91,7 +91,7 @@ function getRandomWord() {
 
 function checkInput() {
     if (wordInput.value.trim().toLowerCase() === currentWord.toLowerCase()) {
-        currentWord = getRandomWord(); // 获取下一个随机单词
+        currentWord = getRandomWord(); // get next random word
         document.getElementById('wordDisplay').innerText = currentWord;
         score++;
         document.getElementById('scoreValue').innerText = score;
@@ -103,7 +103,7 @@ function initGame() {
     score = 0;
     timeLeft = 15;
     wordInput.disabled = false;
-    currentWord = getRandomWord(); // 初始化随机单词
+    currentWord = getRandomWord(); // 初始化随机单词intial the random word
     document.getElementById('wordDisplay').innerText = currentWord;
     document.getElementById('scoreValue').innerText = score;
     document.getElementById('time').innerText = timeLeft;

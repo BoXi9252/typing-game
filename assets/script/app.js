@@ -24,7 +24,7 @@ let timer;
 // 准备开始游戏的倒计时
 function startCountdownBeforeGame() {
     let countdown = 3;
-    playButton.style.visibility = 'hidden'; 
+    playButton.style.visibility = 'hidden';
     countdownTimer.innerText = countdown;
     const countdownInterval = setInterval(() => {
         countdown -= 1;
@@ -42,7 +42,7 @@ function startGame() {
     bgMusic.play();
     gameCount++;
     initGame();
-    playButton.innerText = 'End'; 
+    playButton.innerText = 'End';
     playButton.style.visibility = 'visible'; // 显示按钮
     timer = setInterval(() => {
         if (timeLeft <= 0) {
@@ -65,11 +65,11 @@ function endGame() {
     wordInput.value = '';
 
 
-    const currentDate = new Date();
-    const formattedDate = currentDate.toLocaleDateString();
-    document.getElementById('gameScore').innerHTML = `Score: <span>${score}</span>`;
-    document.getElementById('gameDuration').innerHTML = `Date: <span>${formattedDate}</span>`;
-    document.getElementById('gameCount').innerHTML = `#<span>${gameCount}</span>`;
+    // const currentDate = new Date();
+    // const formattedDate = currentDate.toLocaleDateString();
+    // document.getElementById('gameScore').innerHTML = `Score: <span>${score}</span>`;
+    // document.getElementById('gameDuration').innerHTML = `Date: <span>${formattedDate}</span>`;
+    // document.getElementById('gameCount').innerHTML = `#<span>${gameCount}</span>`;
 
     document.getElementById('wordDisplay').innerText = ''; // 清空单词显示
 
@@ -147,19 +147,19 @@ function getScores() {
 
 // 对得分进行排序并裁剪
 function sortAndTrimScores(scoresArray) {
-    return scoresArray.sort((a, b) => b.score - a.score).slice(0, 10);
+    return scoresArray.sort((a, b) => b.score - a.score).slice(0, 9);
 }
 
 // // 显示得分
 function displayScores(scoresArray) {
-    const scoreboardElement = document.getElementById('scoreboardContainer'); 
+    const scoreboardElement = document.getElementById('scoreboardContainer');
     if (scoresArray.length === 0) {
         scoreboardElement.innerHTML = '<p>None History Score</p>';
     } else {
         // scoreboardElement.innerHTML = '<h3>History Score:</h3>' + scoresArray.map((score, index) =>
         //     `<div>Rank ${index + 1}:Score: ${score.score} - ${score.date}</div>`
         // ).join('');
-        scoreboardElement.innerHTML = '<h3>History Score:</h3>' + scoresArray.map((score, index) =>
+        scoreboardElement.innerHTML = '<h3>High Score</h3>' + scoresArray.map((score, index) =>
             `<div class="score-item"><span class="rank">Rank ${index + 1}:</span><span class="score">Score: ${score.score}</span><span class="date">Date: ${score.date}</span></div>`
         ).join('');
 
@@ -175,10 +175,10 @@ playButton.addEventListener('click', function () {
     }
 });
 
-// close button
+// // close button
 document.querySelector('.close-btn').addEventListener('click', function () {
     const modal = document.getElementById('gameInfoModal');
-    
+
     modal.style.display = 'none';
 });
 

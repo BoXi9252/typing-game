@@ -21,7 +21,7 @@ body {
 h1 {
     font-size: 20px;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: #fff;
 }
 
@@ -32,7 +32,7 @@ h1 {
 
 
 #countdownTimer {
-    top: 20%;
+    top: 15%;
     position: fixed;
     font-size: 4rem;
     color: #f9a736;
@@ -49,18 +49,19 @@ button {
 }
 
 #wordDisplay {
-    /* position: relative; */
-    /* margin-top: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     height: 100px;
-    padding: 20px;
-    margin: 30px 0;
+    margin: 10px 0;
     background-color: #f9a736;
     color: #000;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 3rem;
     font-weight: 500;
+    margin-bottom: 25px;
 }
 
 #wordInput {
@@ -75,16 +76,30 @@ button {
 }
 
 
-
 #timer,
 #score {
     margin-left: 20px;
     color: #fff;
+    margin-top: -10px;
 }
 
 /* --------pop up modal-----*/
 
-.info-container {
+
+.modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: goldenrod;
+    /* z-index: 10; */
+    width: 330px;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, .5);
+}
+
+/* .info-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,38 +112,56 @@ button {
     font-weight: 500;
     margin-bottom: 30px;
     margin-top: 100px;
-}
+} */
 
-
-
-.modal {
-    display: none;
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: goldenrod;
-    /* z-index: 10; */
-    width: 300px;
-    height: 100%;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, .5);
-}
-
-.score-item span {
-    margin-right: 10px;
-}
 
 
 .scoreboard div {
     margin-bottom: 10px;
 }
 
-.modal-content {
-    padding: 20px;
+
+
+h3 {
+    margin-left: 60px;
+    font-size: 25px;
+    margin-bottom: 30px;
 }
+
+
+
+
+.modal-content {
+    padding: 30px;
+    position: relative;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rank,
+.score,
+.date {
+    margin: 0 7px;
+    /* 给每个元素添加水平间距 */
+}
+
+
+
 
 .close-btn {
     cursor: pointer;
     float: right;
     font-size: 30px;
+    position: absolute;
+    top: 5%;
+    right: 30px;
 }

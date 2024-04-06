@@ -1,33 +1,28 @@
 body {
     font-family: Arial, sans-serif;
     background: #000 url("../image/img.png") center center / cover no-repeat fixed;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* height: 100vh; */
+    background-color: #fff;
+    height: 100vh;
 
 }
 
 .game-container {
-    position: relative;
+    margin-top: 250px;
+    /* position: relative; */
     width: 50%;
     /* height: 70%; */
     display: flex;
     flex-direction: column;
     margin-inline: auto;
     justify-content: center;
-    /* background-color: aqua; */
     align-items: center;
-    /* text-align: center; */
 }
 
 h1 {
     font-size: 20px;
     font-weight: 300;
-    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #fff;
 }
 
 .container {
@@ -37,15 +32,14 @@ h1 {
 
 
 #countdownTimer {
-    top: 10%;
+    top: 20%;
     position: fixed;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #f9a736;
     /* display: none; */
 }
 
 button {
-    margin-top: 10px;
     width: 160px;
     height: 50px;
     border-radius: 3px;
@@ -60,7 +54,7 @@ button {
     width: 50%;
     height: 100px;
     padding: 20px;
-    margin: 20px 0;
+    margin: 30px 0;
     background-color: #f9a736;
     color: #000;
     border-radius: 5px;
@@ -84,10 +78,11 @@ button {
 
 #timer,
 #score {
-    margin-top: 20px;
     margin-left: 20px;
+    color: #fff;
 }
 
+/* --------pop up modal-----*/
 
 .info-container {
     display: flex;
@@ -97,17 +92,15 @@ button {
 
 #gameInfo {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    color:#fff;
+    justify-content: space-between;
+    width: 85%;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-top: 100px;
 }
 
-#gameInfo>div {
-    margin: 0 10px;
-    /* 为每个子项添加一些外边距*/
-}
 
- /* --------pop up modal-----*/
+
 .modal {
     display: none;
     position: fixed;
@@ -115,10 +108,19 @@ button {
     top: 50%;
     transform: translateY(-50%);
     background-color: goldenrod;
-    z-index: 10;
+    /* z-index: 10; */
     width: 300px;
     height: 100%;
     box-shadow: -2px 0 5px rgba(0, 0, 0, .5);
+}
+
+.score-item span {
+    margin-right: 10px;
+}
+
+
+.scoreboard div {
+    margin-bottom: 10px;
 }
 
 .modal-content {

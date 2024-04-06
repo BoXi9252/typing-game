@@ -25,9 +25,9 @@
 
 <body>
     <div class="game-container">
+        <h1>Type as many as words in 15 minutes!</h1>
         <button id="playButton">Play Now</button>
         <button id="endButton" style="visibility: hidden;">End</button>
-        <h1>Type as much as words in 15 minutes!</h1>
         <div id="countdownTimer"></div>
         <div class="container">
             <div id="timer">Time left: <span id="time">0</span> seconds</div>
@@ -40,13 +40,12 @@
                 <span class="close-btn">&times;</span>
                 <div id="gameInfo" class="info-container">
                     <div id="gameScore">Score: <span>0</span></div>
-                    <div id="gameDuration">date: <span>0s</span></div>
+                    <div id="gameDuration">Date: <span>0s</span></div>
                     <div id="gameCount">#<span>1</span></div>
                 </div>
-                <div id="scoreboardContainer" class="scoreboard"></div> <!-- 历史分数容器 -->
+                <div id="scoreboardContainer" class="scoreboard"></div> 
             </div>
         </div>
-        <div id="scoreboard" class="scoreboard"></div>
         <audio id="bgMusic" loop>
             <source src="./assets/audio/music.wav" type="audio/mpeg">
         </audio>

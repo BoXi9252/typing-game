@@ -24,7 +24,7 @@ let timer;
 // 准备开始游戏的倒计时
 function startCountdownBeforeGame() {
     let countdown = 3;
-    playButton.style.visibility = 'hidden'; // 隐藏按钮避免重复点击
+    playButton.style.visibility = 'hidden'; 
     countdownTimer.innerText = countdown;
     const countdownInterval = setInterval(() => {
         countdown -= 1;
@@ -69,11 +69,9 @@ function endGame() {
     const formattedDate = currentDate.toLocaleDateString();
     document.getElementById('gameScore').innerHTML = `Score: <span>${score}</span>`;
     document.getElementById('gameDuration').innerHTML = `Date: <span>${formattedDate}</span>`;
-    document.getElementById('gameCount').innerHTML = `# <span>${gameCount}</span>`;
+    document.getElementById('gameCount').innerHTML = `#<span>${gameCount}</span>`;
 
     document.getElementById('wordDisplay').innerText = ''; // 清空单词显示
-
-
 
     updateScoreboard();
     resetGame();
@@ -87,7 +85,7 @@ function resetGame() {
     score = 0;
     timeLeft = 15;
     currentWord = getRandomWord();
-    document.getElementById('wordDisplay').innerText = currentWord;
+    // document.getElementById('wordDisplay').innerText = currentWord;
     document.getElementById('scoreValue').innerText = score;
     document.getElementById('time').innerText = timeLeft;
 }
@@ -158,9 +156,13 @@ function displayScores(scoresArray) {
     if (scoresArray.length === 0) {
         scoreboardElement.innerHTML = '<p>None History Score</p>';
     } else {
+        // scoreboardElement.innerHTML = '<h3>History Score:</h3>' + scoresArray.map((score, index) =>
+        //     `<div>Rank ${index + 1}:Score: ${score.score} - ${score.date}</div>`
+        // ).join('');
         scoreboardElement.innerHTML = '<h3>History Score:</h3>' + scoresArray.map((score, index) =>
-            `<div>Rank ${index + 1}: ${score.score} - ${score.date}</div>`
+            `<div class="score-item"><span class="rank">Rank ${index + 1}:</span><span class="score">Score: ${score.score}</span><span class="date">Date: ${score.date}</span></div>`
         ).join('');
+
     }
 }
 
@@ -171,5 +173,12 @@ playButton.addEventListener('click', function () {
     } else if (playButton.innerText === 'End') {
         endGame();
     }
+});
+
+// close button
+document.querySelector('.close-btn').addEventListener('click', function () {
+    const modal = document.getElementById('gameInfoModal');
+    
+    modal.style.display = 'none';
 });
 

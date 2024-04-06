@@ -90,7 +90,6 @@ button {
 
 
 .info-container {
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,11 +98,35 @@ button {
 #gameInfo {
     display: flex;
     justify-content: space-around;
-    width: 80%;
-    color:#f9a736;
+    width: 100%;
+    color:#fff;
 }
 
 #gameInfo>div {
     margin: 0 10px;
     /* 为每个子项添加一些外边距*/
+}
+
+ /* --------pop up modal-----*/
+.modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: goldenrod;
+    z-index: 10;
+    width: 300px;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, .5);
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.close-btn {
+    cursor: pointer;
+    float: right;
+    font-size: 30px;
 }

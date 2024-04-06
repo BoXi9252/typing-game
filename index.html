@@ -30,17 +30,23 @@
         <h1>Type as much as words in 15 minutes!</h1>
         <div id="countdownTimer"></div>
         <div class="container">
-            <div id="timer">Time left: <span id="time">00</span> seconds</div>
+            <div id="timer">Time left: <span id="time">0</span> seconds</div>
             <div id="score">Score: <span id="scoreValue">0</span></div>
         </div>
         <div id="wordDisplay"></div>
         <input type="text" id="wordInput" placeholder="Start typing..." disabled>
-        <div id="gameInfo" class="info-container">
-            <div id="gameScore">Score: <span>0</span></div>
-            <div id="gameDuration">Game duration: <span>0s</span></div>
-            <div id="gameCount">Game count: <span>1</span></div>
+        <div id="gameInfoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div id="gameInfo" class="info-container">
+                    <div id="gameScore">Score: <span>0</span></div>
+                    <div id="gameDuration">date: <span>0s</span></div>
+                    <div id="gameCount">#<span>1</span></div>
+                </div>
+                <div id="scoreboardContainer" class="scoreboard"></div> <!-- 历史分数容器 -->
+            </div>
         </div>
-
+        <div id="scoreboard" class="scoreboard"></div>
         <audio id="bgMusic" loop>
             <source src="./assets/audio/music.wav" type="audio/mpeg">
         </audio>

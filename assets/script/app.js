@@ -42,7 +42,7 @@ function startGame() {
     bgMusic.play();
     gameCount++;
     initGame();
-    playButton.innerText = 'End'; // 更改按钮文案为"End"
+    playButton.innerText = 'End'; 
     playButton.style.visibility = 'visible'; // 显示按钮
     timer = setInterval(() => {
         if (timeLeft <= 0) {
@@ -153,22 +153,12 @@ function sortAndTrimScores(scoresArray) {
 }
 
 // // 显示得分
-// function displayScores(scoresArray) {
-//     const scoreboardElement = document.getElementById('scoreboard');
-//     if (scoresArray.length === 0) {
-//         scoreboardElement.innerHTML = '没有玩过任何游戏。';
-//     } else {
-//         scoreboardElement.innerHTML = scoresArray.map((score, index) =>
-//             `<div>Rank ${index + 1}: ${score.score} - ${score.date}</div>`
-//         ).join('');
-//     }
-// }
 function displayScores(scoresArray) {
-    const scoreboardElement = document.getElementById('scoreboardContainer'); // 注意更改为新容器的 ID
+    const scoreboardElement = document.getElementById('scoreboardContainer'); 
     if (scoresArray.length === 0) {
-        scoreboardElement.innerHTML = '<p>没有玩过任何游戏。</p>';
+        scoreboardElement.innerHTML = '<p>None History Score</p>';
     } else {
-        scoreboardElement.innerHTML = '<h3>历史分数：</h3>' + scoresArray.map((score, index) =>
+        scoreboardElement.innerHTML = '<h3>History Score:</h3>' + scoresArray.map((score, index) =>
             `<div>Rank ${index + 1}: ${score.score} - ${score.date}</div>`
         ).join('');
     }
